@@ -4,3 +4,5 @@ Makefile.PL
 Stamped.pm
 README
 t/01basic.t
+t/02log_to.t
+META.yml                                Module meta-data (added by MakeMaker)

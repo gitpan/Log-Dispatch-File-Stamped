@@ -9,7 +9,7 @@ use vars qw(@ISA $VERSION);
 use Log::Dispatch::File;
 @ISA = qw(Log::Dispatch::File);
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 sub new
 {
@@ -29,7 +29,7 @@ sub new
     $self->_basic_init(%params);
 
     # split pathname into path, basename, extension
-    @$self{qw(name path ext)} = fileparse($params{filename}, '\.[^.]+');
+    @$self{qw(_name _path _ext)} = fileparse($params{filename}, '\.[^.]+');
 
     return $self;
 }
@@ -57,9 +57,9 @@ sub _make_handle
     # if the stamp string has changed, need to open a new logfile
     if (!$self->{stamp} || $stamp ne $self->{stamp}) {
         # build the stamped file name
-        my $filename = join '-', $self->{name}, $stamp;
-        $filename .= $self->{ext} if $self->{ext};
-        $filename  = catfile($self->{path}, $filename);
+        my $filename = join '-', $self->{_name}, $stamp;
+        $filename .= $self->{_ext} if $self->{_ext};
+        $filename  = catfile($self->{_path}, $filename);
         # close previous open logfile
         close $self->{fh} if $self->{fh};
         # open new logfile

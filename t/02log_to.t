@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-#$Id: 01basic.t,v 1.1 2003/02/08 13:30:30 eric Exp $
+#$Id: 01log_to.t,v 1.1 2003/02/08 13:30:30 eric Exp $
 
 use strict;
 use File::Spec::Functions qw(catfile);
@@ -39,7 +39,7 @@ for my $t (@tests) {
     my $stamped = Log::Dispatch::File::Stamped->new(%{$t->{params}});
     ok($stamped);
     $dispatcher->add($stamped);
-    $dispatcher->log( level   => 'info', message => $t->{message} );
+    $dispatcher->log_to( name =>'file', level => 'info', message => $t->{message} );
     ok(-e $file);
     open my $fh, "<$file";
     ok($fh);

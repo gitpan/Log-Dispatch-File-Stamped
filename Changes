@@ -4,5 +4,8 @@ $Id: Changes,v 1.1 2003/02/08 13:30:30 eric Exp $
 Revision history for Perl extension Log::Dispatch::File::Stamped.
 =================================================================
 
+2004-08-08 - log_to() wasn't working due to attribute name clash
+             (https://rt.cpan.org/Ticket/Display.html?id=7249)
+
 2003-02-08 - Uploaded 0.01 to CPAN
 

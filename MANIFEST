@@ -3,6 +3,7 @@ MANIFEST
 Makefile.PL
 Stamped.pm
 README
-t/01basic.t
-t/02log_to.t
+t/basic.t
+t/log_to.t
+t/pod.t
 META.yml                                Module meta-data (added by MakeMaker)

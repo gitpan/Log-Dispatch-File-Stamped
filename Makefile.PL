@@ -1,4 +1,4 @@
-# $Id: Makefile.PL,v 1.1 2003/02/08 13:30:30 eric Exp $
+# $Id: Makefile.PL,v 1.2 2004/09/15 11:35:43 eric Exp $
 
 use ExtUtils::MakeMaker;
 
@@ -11,6 +11,7 @@ WriteMakefile(
     PREREQ_PM    => {
                       Log::Dispatch       => 0,
                       Log::Dispatch::File => 0,
+                      Test::More          => 0,
                     },
     dist         => { COMPRESS => 'gzip -9f',
                       SUFFIX   => 'gz',

@@ -1,22 +1,17 @@
 #!/usr/bin/perl
 #
-#$Id: 01log_to.t,v 1.1 2003/02/08 13:30:30 eric Exp $
+#$Id: log_to.t,v 1.1 2004/09/15 11:55:26 eric Exp $
 
 use strict;
 use File::Spec::Functions qw(catfile);
 use FindBin               qw($Bin);
-use Test;
+use Test::More tests => 12;
 
-BEGIN { plan tests => 9 }
-
-use Log::Dispatch;
-use Log::Dispatch::File::Stamped;
+use_ok('Log::Dispatch');
+use_ok('Log::Dispatch::File::Stamped');
 
 my ($hour,$mday,$mon,$year) = (localtime)[2..5];
 my @files;
-
-my $dispatcher = Log::Dispatch->new;
-ok($dispatcher);
 
 my %params = (
     name      => 'file',
@@ -34,6 +29,8 @@ my @tests = (
   },
 );
 for my $t (@tests) {
+    my $dispatcher = Log::Dispatch->new;
+    ok($dispatcher);
     my $file = catfile($Bin, $t->{expected});
     push @files, $file;
     my $stamped = Log::Dispatch::File::Stamped->new(%{$t->{params}});

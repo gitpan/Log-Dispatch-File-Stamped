@@ -1,11 +1,15 @@
-$Id: Changes,v 1.1 2003/02/08 13:30:30 eric Exp $
+$Id: Changes,v 1.4 2004/09/15 11:39:06 eric Exp $
 
 =================================================================
 Revision history for Perl extension Log::Dispatch::File::Stamped.
 =================================================================
+0.03 2004-09-15 - Fix "Log::Dispatch::* object file already exists" warning
+                  displayed on some platforms during "make test".
+                - Require Test::More
+                - Fix pod and add a pod test
 
-2004-08-08 - log_to() wasn't working due to attribute name clash
-             (https://rt.cpan.org/Ticket/Display.html?id=7249)
+0.02 2004-08-08 - log_to() wasn't working due to attribute name clash
+                  (https://rt.cpan.org/Ticket/Display.html?id=7249)
 
-2003-02-08 - Uploaded 0.01 to CPAN
+0.01 2003-02-08 - Uploaded 0.01 to CPAN
 

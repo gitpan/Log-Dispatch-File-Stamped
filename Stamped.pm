@@ -9,7 +9,7 @@ use vars qw(@ISA $VERSION);
 use Log::Dispatch::File;
 @ISA = qw(Log::Dispatch::File);
 
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 sub new
 {
@@ -96,10 +96,12 @@ stamped files.
 
 =over 4
 
-=item * new(%p)
+=item new(%p)
 
 This method takes the same set of parameters as Log::Dispatch::File::new(),
 with the following differences:
+
+=over 4
 
 =item -- filename ($)
 
@@ -119,6 +121,8 @@ Defaults to '%Y%m%d'.
 =item -- mode ($)
 
 This parameter is ignored, and is forced to 'append'.
+
+=back
 
 =back
 

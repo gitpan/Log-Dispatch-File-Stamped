@@ -1,0 +1,6 @@
+Changes
+MANIFEST
+Makefile.PL
+Stamped.pm
+README
+t/01basic.t

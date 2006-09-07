@@ -9,7 +9,7 @@ use vars qw(@ISA $VERSION);
 use Log::Dispatch::File;
 @ISA = qw(Log::Dispatch::File);
 
-$VERSION = '0.04';
+$VERSION = '0.05';
 
 sub new
 {
@@ -123,6 +123,12 @@ Defaults to '%Y%m%d'.
 This parameter is ignored, and is forced to 'append'.
 
 =back
+
+=item log_message( message => $ )
+
+Sends a message to the appropriate output.  Generally this
+shouldn't be called directly but should be called through the
+"log()" method (in Log::Dispatch::Output).
 
 =back
 

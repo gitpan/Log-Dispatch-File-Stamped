@@ -2,7 +2,7 @@ Build.PL
 Changes
 MANIFEST
 Makefile.PL
-Stamped.pm
+lib/Log/Dispatch/File/Stamped.pm
 README
 t/basic.t
 t/log_to.t

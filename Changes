@@ -3,6 +3,10 @@ $Id: Changes,v 1.5 2006/09/07 08:22:02 eric Exp $
 =================================================================
 Revision history for Perl extension Log::Dispatch::File::Stamped.
 =================================================================
+0.05 2006-09-07 - fix typo which prevented correcting indexing by PAUSE
+                - move .pm file to lib/
+                - document log_message()
+
 0.04 2006-09-07 - add Build.PL to build with Module::Build
                 - add t/podcover.t to make CPANTS happy
 

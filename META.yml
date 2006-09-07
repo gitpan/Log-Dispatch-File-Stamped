@@ -1,6 +1,6 @@
 ---
 name: Log-Dispatch-File-Stamped
-version: 0.04
+version: 0.05
 author:
   - Eric Cholet <cholet@logilune.com>
 abstract: Logging to date/time stamped files
@@ -9,5 +9,8 @@ requires:
   Log::Dispatch: 0
   Log::Dispatch::File: 0
   Test::More: 0
-provides: {}
+provides:
+  Log::Dispatch::File::Stamped:
+    file: lib/Log/Dispatch/File/Stamped.pm
+    version: 0.05
 generated_by: Module::Build version 0.2609

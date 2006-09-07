@@ -1,3 +1,4 @@
+Build.PL
 Changes
 MANIFEST
 Makefile.PL
@@ -6,4 +7,5 @@ README
 t/basic.t
 t/log_to.t
 t/pod.t
-META.yml                                Module meta-data (added by MakeMaker)
+t/podcover.t
+META.yml

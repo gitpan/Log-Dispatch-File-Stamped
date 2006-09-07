@@ -1,12 +1,13 @@
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         Log-Dispatch-File-Stamped
-version:      0.03
-version_from: Stamped.pm
-installdirs:  site
+---
+name: Log-Dispatch-File-Stamped
+version: 0.04
+author:
+  - Eric Cholet <cholet@logilune.com>
+abstract: Logging to date/time stamped files
+license: perl
 requires:
-    Test::More:                    0
-    Log::Dispatch::File:           0
-    Log::Dispatch:                 0
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.12
+  Log::Dispatch: 0
+  Log::Dispatch::File: 0
+  Test::More: 0
+provides: {}
+generated_by: Module::Build version 0.2609

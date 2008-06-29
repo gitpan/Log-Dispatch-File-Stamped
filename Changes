@@ -1,8 +1,11 @@
-$Id: Changes,v 1.5 2006/09/07 08:22:02 eric Exp $
+$Id: Changes,v 1.6 2006-09-07 08:40:27 eric Exp $
 
 =================================================================
 Revision history for Perl extension Log::Dispatch::File::Stamped.
 =================================================================
+0.06 ????-??-?? - added missing meta-spec to meta.yml
+                - remove pod tests
+
 0.05 2006-09-07 - fix typo which prevented correcting indexing by PAUSE
                 - move .pm file to lib/
                 - document log_message()

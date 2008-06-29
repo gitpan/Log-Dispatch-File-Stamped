@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-#$Id: basic.t,v 1.1 2004/09/15 11:55:26 eric Exp $
+#$Id: basic.t,v 1.1 2004-09-15 11:55:26 eric Exp $
 
 use strict;
 use File::Spec::Functions qw(catfile);

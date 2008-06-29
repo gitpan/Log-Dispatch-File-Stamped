@@ -1,10 +1,12 @@
 ---
 name: Log-Dispatch-File-Stamped
-version: 0.05
+version: 0.06
 author:
-  - Eric Cholet <cholet@logilune.com>
+  - 'Eric Cholet <cholet@logilune.com>'
 abstract: Logging to date/time stamped files
 license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 requires:
   Log::Dispatch: 0
   Log::Dispatch::File: 0
@@ -12,5 +14,8 @@ requires:
 provides:
   Log::Dispatch::File::Stamped:
     file: lib/Log/Dispatch/File/Stamped.pm
-    version: 0.05
-generated_by: Module::Build version 0.2609
+    version: 0.06
+generated_by: Module::Build version 0.2806
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2

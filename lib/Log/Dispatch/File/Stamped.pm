@@ -9,7 +9,7 @@ use vars qw(@ISA $VERSION);
 use Log::Dispatch::File;
 @ISA = qw(Log::Dispatch::File);
 
-$VERSION = '0.06';
+$VERSION = '0.07';
 
 sub new
 {
@@ -21,7 +21,10 @@ sub new
 
     # stamp format
     $self->{stamp_fmt} = delete $params{stamp_fmt} || '%Y%m%d';
-    
+
+    # binmode
+    $self->{binmode} = delete $params{binmode};
+
     # only append mode is supported
     $params{mode} = 'append';
 
@@ -63,7 +66,11 @@ sub _make_handle
         # close previous open logfile
         close $self->{fh} if $self->{fh};
         # open new logfile
-        $self->SUPER::_make_handle(filename => $filename, mode => 'append');
+        $self->SUPER::_make_handle(
+            filename => $filename,
+            mode     => 'append',
+            ( $self->{'binmode'} ? ( 'binmode' => $self->{'binmode'} ) : () )
+        );
     }
 }
 
@@ -117,6 +124,10 @@ Refer to your platform's strftime documentation for the list of allowed
 tokens.
 
 Defaults to '%Y%m%d'.
+
+=item -- binmode ($)
+
+A layer name to be passed to binmode, like ":utf8" or ":raw".
 
 =item -- mode ($)
 

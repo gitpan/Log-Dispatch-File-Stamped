@@ -1,9 +1,10 @@
 Build.PL
 Changes
-MANIFEST
-Makefile.PL
 lib/Log/Dispatch/File/Stamped.pm
+Makefile.PL
+MANIFEST
+META.yml
 README
 t/basic.t
+t/binmode.t
 t/log_to.t
-META.yml

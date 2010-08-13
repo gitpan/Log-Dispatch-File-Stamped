@@ -1,6 +1,6 @@
 ---
 name: Log-Dispatch-File-Stamped
-version: 0.06
+version: 0.07
 author:
   - 'Eric Cholet <cholet@logilune.com>'
 abstract: Logging to date/time stamped files
@@ -11,11 +11,13 @@ requires:
   Log::Dispatch: 0
   Log::Dispatch::File: 0
   Test::More: 0
+configure_requires:
+  Module::Build: 0.35
 provides:
   Log::Dispatch::File::Stamped:
     file: lib/Log/Dispatch/File/Stamped.pm
-    version: 0.06
-generated_by: Module::Build version 0.2806
+    version: 0.07
+generated_by: Module::Build version 0.35
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4

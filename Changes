@@ -3,6 +3,8 @@ $Id: Changes,v 1.6 2006-09-07 08:40:27 eric Exp $
 =================================================================
 Revision history for Perl extension Log::Dispatch::File::Stamped.
 =================================================================
+0.08 2010-08-14 - skip binmode tests under perls < 5.8
+
 0.07 2010-08-13 - add support for binmode parameter
                   patch by Tokuhiro Matsuno
                   (https://rt.cpan.org/Ticket/Display.html?id=60278)

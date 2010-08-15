@@ -3,31 +3,33 @@
 use strict;
 use File::Spec::Functions qw(catfile);
 use FindBin               qw($Bin);
-use Test::More tests => 7;
-
-use_ok('Log::Dispatch');
-use_ok('Log::Dispatch::File::Stamped');
-
-my ($hour,$mday,$mon,$year) = (localtime)[2..5];
-my @files;
+use Test::More;
 
 my %params = (
     name      => 'file',
     min_level => 'debug',
     filename  => catfile($Bin, 'logfile.txt'),
 );
+my ($hour,$mday,$mon,$year) = (localtime)[2..5];
+my @tests = (
+  { expected => sprintf("logfile-%04d%02d%02d.txt", $year+1900, $mon+1, $mday),
+    params   => {%params, 'binmode' => ':utf8'},
+    message  => "foo bar\x{20AC}",
+    expected_message => "foo bar\xe2\x82\xac",
+  },
+);
+plan tests => 2 + 5 * @tests;
+
+use_ok('Log::Dispatch');
+use_ok('Log::Dispatch::File::Stamped');
+
+my @files;
+
 SKIP:
 {
-    skip "Cannot test utf8 files with this version of Perl ($])", 1
+    skip "Cannot test utf8 files with this version of Perl ($])", 5 * @tests
         unless $] >= 5.008;
 
-    my @tests = (
-      { expected => sprintf("logfile-%04d%02d%02d.txt", $year+1900, $mon+1, $mday),
-        params   => {%params, 'binmode' => ':utf8'},
-        message  => "foo bar\x{20AC}",
-        expected_message => "foo bar\xe2\x82\xac",
-      },
-    );
     for my $t (@tests) {
         my $dispatcher = Log::Dispatch->new;
         ok($dispatcher);

@@ -9,7 +9,7 @@ use vars qw(@ISA $VERSION);
 use Log::Dispatch::File;
 @ISA = qw(Log::Dispatch::File);
 
-$VERSION = '0.08';
+$VERSION = '0.09';
 
 sub new
 {

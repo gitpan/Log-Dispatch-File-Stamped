@@ -8,3 +8,4 @@ README
 t/basic.t
 t/binmode.t
 t/log_to.t
+t/perms.t

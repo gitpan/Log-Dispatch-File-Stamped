@@ -9,7 +9,7 @@ use vars qw(@ISA $VERSION);
 use Log::Dispatch::File;
 @ISA = qw(Log::Dispatch::File);
 
-$VERSION = '0.09';
+$VERSION = '0.10';
 
 sub new
 {
@@ -22,8 +22,9 @@ sub new
     # stamp format
     $self->{stamp_fmt} = delete $params{stamp_fmt} || '%Y%m%d';
 
-    # binmode
-    $self->{binmode} = delete $params{binmode};
+    # binmode, permissions
+    $self->{$_} = delete $params{$_}
+        for qw(binmode permissions);
 
     # only append mode is supported
     $params{mode} = 'append';
@@ -66,11 +67,15 @@ sub _make_handle
         # close previous open logfile
         close $self->{fh} if $self->{fh};
         # open new logfile
-        $self->SUPER::_make_handle(
+        my %params = (
             filename => $filename,
             mode     => 'append',
-            ( $self->{'binmode'} ? ( 'binmode' => $self->{'binmode'} ) : () )
         );
+        for my $p (qw(binmode permissions)) {
+            $params{$p} = $self->{$p}
+                if $self->{$p};
+        }
+        $self->SUPER::_make_handle(%params);
     }
 }
 

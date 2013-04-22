@@ -20,5 +20,5 @@ no_index:
 requires:
   Log::Dispatch: 0
   Log::Dispatch::File: 2.38
-  Test::More: 0
-version: 0.10_002
+  Test::More: 0.88
+version: 0.10_003

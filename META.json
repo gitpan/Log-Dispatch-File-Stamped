@@ -1,0 +1,43 @@
+{
+   "abstract" : "Logging to date/time stamped files (UNAUTHORIZED RELEASE)",
+   "author" : [
+      "Eric Cholet <cholet@logilune.com>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "unknown"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Log-Dispatch-File-Stamped",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Log::Dispatch" : "0",
+            "Log::Dispatch::File" : "2.38",
+            "Test::More" : "0"
+         }
+      }
+   },
+   "release_status" : "testing",
+   "version" : "0.10_002"
+}

@@ -3,9 +3,13 @@ Changes
 lib/Log/Dispatch/File/Stamped.pm
 Makefile.PL
 MANIFEST
+MANIFEST.SKIP
 META.yml
 README
 t/basic.t
 t/binmode.t
+t/close-after-write.t
 t/log_to.t
+t/other_options.t
 t/perms.t
+META.json                                Module JSON meta-data (added by MakeMaker)

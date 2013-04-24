@@ -21,4 +21,5 @@ requires:
   Log::Dispatch: 0
   Log::Dispatch::File: 2.38
   Test::More: 0.88
-version: 0.10_003
+  Test::TempDir: 0
+version: 0.10_004

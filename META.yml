@@ -20,6 +20,7 @@ no_index:
 requires:
   Log::Dispatch: 0
   Log::Dispatch::File: 2.38
+  Path::Tiny: 0
   Test::More: 0.88
   Test::TempDir: 0
-version: 0.10_004
+version: 0.10_005

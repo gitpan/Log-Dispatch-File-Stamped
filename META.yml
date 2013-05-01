@@ -23,4 +23,4 @@ requires:
   Path::Tiny: 0
   Test::More: 0.88
   Test::TempDir: 0
-version: 0.10_007
+version: 0.10_008

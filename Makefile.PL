@@ -1,10 +1,10 @@
 # $Id: Makefile.PL,v 1.3 2006-09-07 08:40:27 eric Exp $
 
-use ExtUtils::MakeMaker;
+use ExtUtils::MakeMaker 6.30;
 
 WriteMakefile(
     NAME          => 'Log::Dispatch::File::Stamped',
-    AUTHOR        => 'Eric Cholet <cholet@logilune.com>',
+    AUTHOR        => 'Eric Cholet <cholet@logilune.com>, Karen Etheridge <ether@cpan.org>',
     VERSION_FROM  => 'lib/Log/Dispatch/File/Stamped.pm',
     ABSTRACT_FROM => 'lib/Log/Dispatch/File/Stamped.pm',
     PL_FILES      => {},
@@ -17,4 +17,14 @@ WriteMakefile(
                     },
     dist          => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean         => { FILES => 'Log-Dispatch-File-Stamped-*' },
+
+    META_MERGE => {
+        dynamic_config => 0,
+
+        resources => {
+            bugtracker => 'https://rt.cpan.org/Public/Dist/Display.html?Name=Log-Dispatch-File-Stamped',
+            repository => 'https://github.com/karenetheridge/Log-Dispatch-File-Stamped.git',
+            homepage => 'https://github.com/karenetheridge/Log-Dispatch-File-Stamped',
+        },
+    },
 );

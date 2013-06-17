@@ -1,10 +1,10 @@
 {
    "abstract" : "Logging to date/time stamped files (UNAUTHORIZED RELEASE)",
    "author" : [
-      "Eric Cholet <cholet@logilune.com>"
+      "Eric Cholet <cholet@logilune.com>, Karen Etheridge <ether@cpan.org>"
    ],
-   "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.130880",
+   "dynamic_config" : 0,
+   "generated_by" : "ExtUtils::MakeMaker version 6.68, CPAN::Meta::Converter version 2.131490",
    "license" : [
       "unknown"
    ],
@@ -40,6 +40,15 @@
          }
       }
    },
-   "release_status" : "testing",
-   "version" : "0.10_010"
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Log-Dispatch-File-Stamped"
+      },
+      "homepage" : "https://github.com/karenetheridge/Log-Dispatch-File-Stamped",
+      "repository" : {
+         "url" : "https://github.com/karenetheridge/Log-Dispatch-File-Stamped.git"
+      }
+   },
+   "version" : "0.11"
 }

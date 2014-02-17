@@ -1,11 +1,6 @@
-#!/usr/bin/perl
-#
-#$Id: basic.t,v 1.1 2004-09-15 11:55:26 eric Exp $
-
 use strict;
 use warnings;
 use File::Spec::Functions qw(catfile);
-use FindBin               qw($Bin);
 use Test::More tests => 12;
 
 use_ok('Log::Dispatch');
@@ -17,7 +12,7 @@ my @files;
 my %params = (
     name      => 'file',
     min_level => 'debug',
-    filename  => catfile($Bin, 'logfile.txt'),
+    filename  => catfile('t', 'logfile.txt'),
 );
 my @tests = (
   { expected => sprintf("logfile-%04d%02d%02d.txt", $year+1900, $mon+1, $mday),
@@ -32,7 +27,7 @@ my @tests = (
 for my $t (@tests) {
     my $dispatcher = Log::Dispatch->new;
     ok($dispatcher);
-    my $file = catfile($Bin, $t->{expected});
+    my $file = catfile('t', $t->{expected});
     push @files, $file;
     my $stamped = Log::Dispatch::File::Stamped->new(%{$t->{params}});
     ok($stamped);
@@ -49,4 +44,3 @@ for my $t (@tests) {
 END {
     unlink @files if @files;
 };
-__END__

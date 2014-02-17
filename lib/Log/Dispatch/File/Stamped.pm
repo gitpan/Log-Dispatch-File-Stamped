@@ -1,14 +1,11 @@
 use strict;
 use warnings;
 package Log::Dispatch::File::Stamped;
-{
-  $Log::Dispatch::File::Stamped::VERSION = '0.12';
-}
-# git description: v0.11-3-gca8cbec
-
 BEGIN {
   $Log::Dispatch::File::Stamped::AUTHORITY = 'cpan:ETHER';
 }
+# git description: v0.12-9-g1938fc4
+$Log::Dispatch::File::Stamped::VERSION = '0.13';
 # ABSTRACT: Logging to date/time stamped files
 
 use File::Basename        qw(fileparse);
@@ -90,13 +87,17 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
+=for :stopwords Eric Cholet Karen Etheridge txt Rolsky
+
 =head1 NAME
 
 Log::Dispatch::File::Stamped - Logging to date/time stamped files
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 SYNOPSIS
 
@@ -113,48 +114,42 @@ version 0.12
 
 =head1 DESCRIPTION
 
-This module subclasses Log::Dispatch::File for logging to date/time
+This module subclasses L<Log::Dispatch::File> for logging to date/time
 stamped files, respecting all its configuration options.
 
 =head1 METHODS
 
-=over 4
+=head2 new(%p)
 
-=item new(%p)
-
-This method takes the same set of parameters as Log::Dispatch::File::new(),
+This method takes the same set of parameters as L<Log::Dispatch::File::new()|Log::Dispatch::File/new>,
 with the following differences:
 
 =over 4
 
-=item -- filename ($)
+=item * filename ($)
 
 The filename template. The actual timestamp will be appended to this filename
 when creating the actual logfile. If the filename has an extension, the
 timestamp is inserted before the extension. See examples below.
 
-=item -- stamp_fmt ($)
+=item * stamp_fmt ($)
 
-The format of the timestamp string. This module uses POSIX::strftime to
+The format of the timestamp string. This module uses L<POSIX::strftime|POSIX/strftime> to
 create the timestamp string from the current local date and time.
 Refer to your platform's C<strftime> documentation for the list of allowed
 tokens.
 
-Defaults to '%Y%m%d'.
+Defaults to C<%Y%m%d>.
 
 =back
 
-=item log_message( message => $ )
+=head2 log_message( message => $ )
 
 Sends a message to the appropriate output.  Generally this
 shouldn't be called directly but should be called through the
-"log()" method (in Log::Dispatch::Output).
-
-=back
+C<log()> method (in L<Log::Dispatch::Output>).
 
 =head1 EXAMPLES
-
-=for stopwords txt
 
 Assuming the current date and time is:
 
@@ -167,7 +162,7 @@ Assuming the current date and time is:
     filename  => 'logfile.txt',
   );
 
-This will log to file 'logfile-20030208.txt'.
+This will log to file F<logfile-20030208.txt>.
 
   Log::Dispatch::File::Stamped->new(
     name      => 'file',
@@ -176,15 +171,13 @@ This will log to file 'logfile-20030208.txt'.
     stamp_fmt => '%d%H',
   );
 
-This will log to file 'logfile-0813.txt'.
+This will log to file F<logfile-0813.txt>.
 
 =head1 SEE ALSO
 
 L<Log::Dispatch::File>, L<POSIX>.
 
 =head1 ACKNOWLEDGEMENTS
-
-=for stopwords Rolsky
 
 Dave Rolsky, author of the Log::Dispatch suite and many other
 fine modules on CPAN.
@@ -208,7 +201,7 @@ Karen Etheridge <ether@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Karen Etheridge.
+This software is copyright (c) 2003 by Karen Etheridge.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

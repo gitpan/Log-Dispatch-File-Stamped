@@ -2,12 +2,11 @@ use strict;
 use warnings FATAL => 'all';
 
 use Test::More 0.88;
-use Test::TempDir;
 use Test::Deep;
 use Path::Tiny;
 use Log::Dispatch;
 
-my $dir = Path::Tiny->tempdir;
+my $tempdir = Path::Tiny->tempdir;
 
 {
     my $logger = Log::Dispatch->new(
@@ -15,8 +14,8 @@ my $dir = Path::Tiny->tempdir;
             'File::Stamped',
             name => 'foo',
             min_level => 'debug',
-            filename => path($dir, 'foo.log')->stringify,
-            binmode => ':utf8',
+            filename => $tempdir->child('foo.log')->stringify,
+            binmode => ':encoding(UTF-8)',
             autoflush => 0,
             close_after_write => 1,
             permissions => 0777,
@@ -32,7 +31,7 @@ my $dir = Path::Tiny->tempdir;
             name => 'foo',
             min_level => '0',
             max_level => '7',
-            binmode => ':utf8',
+            binmode => ':encoding(UTF-8)',
             autoflush => 0,
             close => 1,
             permissions => 0777,

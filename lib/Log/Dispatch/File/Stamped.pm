@@ -1,12 +1,10 @@
 use strict;
 use warnings;
 package Log::Dispatch::File::Stamped;
-BEGIN {
-  $Log::Dispatch::File::Stamped::AUTHORITY = 'cpan:ETHER';
-}
-# git description: v0.12-9-g1938fc4
-$Log::Dispatch::File::Stamped::VERSION = '0.13';
+# git description: v0.13-11-gc87ccda
+$Log::Dispatch::File::Stamped::VERSION = '0.14';
 # ABSTRACT: Logging to date/time stamped files
+# KEYWORDS: log logging output file timestamp date rolling rotate
 
 use File::Basename        qw(fileparse);
 use File::Spec::Functions qw(catfile);
@@ -89,15 +87,13 @@ __END__
 
 =encoding UTF-8
 
-=for :stopwords Eric Cholet Karen Etheridge txt Rolsky
-
 =head1 NAME
 
 Log::Dispatch::File::Stamped - Logging to date/time stamped files
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 
@@ -151,6 +147,8 @@ C<log()> method (in L<Log::Dispatch::Output>).
 
 =head1 EXAMPLES
 
+=for stopwords txt
+
 Assuming the current date and time is:
 
   % perl -e 'print scalar localtime'
@@ -178,6 +176,8 @@ This will log to file F<logfile-0813.txt>.
 L<Log::Dispatch::File>, L<POSIX>.
 
 =head1 ACKNOWLEDGEMENTS
+
+=for stopwords Rolsky
 
 Dave Rolsky, author of the Log::Dispatch suite and many other
 fine modules on CPAN.

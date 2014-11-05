@@ -38,7 +38,7 @@ no_index:
 provides:
   Log::Dispatch::File::Stamped:
     file: lib/Log/Dispatch/File/Stamped.pm
-    version: '0.14'
+    version: '0.15'
 requires:
   File::Basename: '0'
   File::Spec::Functions: '0'
@@ -54,7 +54,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Log-Dispatch-File-Stamped
   homepage: https://github.com/karenetheridge/Log-Dispatch-File-Stamped
   repository: https://github.com/karenetheridge/Log-Dispatch-File-Stamped.git
-version: '0.14'
+version: '0.15'
 x_Dist_Zilla:
   perl:
     version: '5.021005'
@@ -218,7 +218,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::ChangesHasContent
       name: '@Author::ETHER/Test::ChangesHasContent'
-      version: '0.006'
+      version: '0.007'
     -
       class: Dist::Zilla::Plugin::Test::MinimumVersion
       name: '@Author::ETHER/Test::MinimumVersion'
@@ -433,7 +433,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Prereqs::AuthorDeps
       name: '@Author::ETHER/Prereqs::AuthorDeps'
-      version: '0.003'
+      version: '0.004'
     -
       class: Dist::Zilla::Plugin::MinimumPerl
       name: '@Author::ETHER/MinimumPerl'
@@ -486,7 +486,7 @@ x_Dist_Zilla:
         Dist::Zilla::Role::TestRunner:
           default_jobs: 9
       name: '@Author::ETHER/RunExtraTests'
-      version: '0.023'
+      version: '0.024'
     -
       class: Dist::Zilla::Plugin::CheckSelfDependency
       config:
@@ -620,7 +620,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: v0.14
+          tag: v0.15
           tag_format: v%v%t
           tag_message: v%v%t
           time_zone: local

@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 package Log::Dispatch::File::Stamped;
-# git description: v0.13-11-gc87ccda
-$Log::Dispatch::File::Stamped::VERSION = '0.14';
+# git description: v0.14-1-g1c79ca2
+$Log::Dispatch::File::Stamped::VERSION = '0.15';
 # ABSTRACT: Logging to date/time stamped files
 # KEYWORDS: log logging output file timestamp date rolling rotate
 
@@ -93,7 +93,7 @@ Log::Dispatch::File::Stamped - Logging to date/time stamped files
 
 =head1 VERSION
 
-version 0.14
+version 0.15
 
 =head1 SYNOPSIS
 

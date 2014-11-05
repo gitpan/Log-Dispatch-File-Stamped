@@ -72,7 +72,7 @@ EOW
         "Karen Etheridge <ether\@cpan.org>"
       ],
       "dist_name" => "Log-Dispatch-File-Stamped",
-      "dist_version" => "0.14",
+      "dist_version" => "0.15",
       "license" => "perl",
       "module_name" => "Log::Dispatch::File::Stamped",
       "recommends" => {},
